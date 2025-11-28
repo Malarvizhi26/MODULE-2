@@ -1,56 +1,47 @@
 # Ex.No:5
-# Ex.Name:Write a CPP Program to overload the Operator (++) i.e. on invoking it the incrementation should happen by some random value.
+# Ex.Name: Write A CPP Program to allocate memory dynamically for an integer variable. (Note: p_var = new typename;)
 ## Date:
 ## Aim:
-To write a CPP Program to overload the Operator (++) i.e. on invoking it the incrementation should happen by some random value.
+To write a C++ program to allocate memory dynamically for an integer variable using the new operator.
 
 ## Algorithm:
-1.Start the program.
-
-2.Define a class Rep with a data member value.
-
-3.Define a constructor to initialize value.
-
-4.Overload the prefix ++ operator so that: i)A random number is generated. ii)That random number is added to value. iii)The new value is displayed.
-
-5.In main(), initialize the random number generator using srand(time(0)).
-
-6.Take input for the initial value of the object.
-
-7.Apply the overloaded operator ++, display the incremented result, and then end the program.
-
-
-
+1. Start the program.
+2. Declare a pointer variable of type int.
+3. Allocate memory dynamically for the integer using p_var = new int;.
+4. Accept a value from the user and store it in the dynamically allocated memory.
+5. Display the stored value.
+6. Release the memory using the delete operator.
+7. End the program.
 
 ## Program:
-```
+```cpp
 #include <iostream>
-using namespace std;
-
-class rep {
-public:
-    int a, b, c;
-
-    void operator++() {
-        a = b + c;
-        cout << a;
-    }
+using namespace std ; 
+class var_space
+{
+    public:
+    int *p_var;
+  void allocateSpace()
+  {
+      p_var=new int;
+      cin>>*p_var;
+      cout<<"Integer Value is : "<<*p_var;
+  }
 };
-
-int main() {
-    rep o;
-    cin >> o.b >> o.c;
-    ++o;
-    return 0;
+int main()
+{
+    var_space v;
+    v.allocateSpace();
 }
 ```
 
 
+
 ## Output:
-<img width="1201" height="316" alt="image" src="https://github.com/user-attachments/assets/01554cdc-e753-49e6-81fd-d6fe8a89d073" />
+
+<img width="474" height="200" alt="image" src="https://github.com/user-attachments/assets/44efc019-7cea-42b0-94b8-52ddf3d81548" />
 
 
 
-## Result:
-Hence the program is executed successfully.
-
+##Result:
+The program successfully allocates memory dynamically for an integer variable using the new operator, stores a value, displays it, and then frees the memory using delete.
